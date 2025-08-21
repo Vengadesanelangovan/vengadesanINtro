@@ -21,13 +21,11 @@
 - Strengths: Problem solving, teamwork, adaptability
 
 ## 🚀 Projects
-> Replace the placeholders below with your real projects (repo links / demo links)
-
-- **Project One – Title**
-- ### 1️⃣ CS Dashboard
-**Interactive Data Visualization Dashboard** – Explore student performance, attendance, and trends.  
-**Stack:** Python, Flask, Pandas, HTML/CSS  
-[🔗 View Repository](https://github.com/Vengadesanelangovan/Data-Visualization-Dashboard)
+- **Project One – CS Advanced Dashboard**
+  - ### 1️⃣ CS Dashboard
+  **Interactive Data Visualization Dashboard** – Explore student performance, attendance, and trends.  
+  **Stack:** Python, Flask, Pandas, HTML/CSS  
+  [🔗 View Repository](https://github.com/Vengadesanelangovan/Data-Visualization-Dashboard)
 
 - **Project Two – Title**  
   Short description…  
