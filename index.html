@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vengadesan · Portfolio</title>
+  <style>
+    :root { --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji","Segoe UI Emoji"; background:linear-gradient(180deg, #0b1220, #0f172a); color:var(--text)}
+    .wrap{max-width:980px; margin:0 auto; padding:32px 20px}
+    .card{background:rgba(17,24,39,0.6); border:1px solid rgba(255,255,255,0.06); border-radius:18px; padding:24px; box-shadow:0 10px 30px rgba(0,0,0,0.25); backdrop-filter: blur(8px); margin-bottom:18px}
+    h1{font-size:36px; margin:0 0 8px 0}
+    h2{font-size:22px; margin:14px 0}
+    p{line-height:1.6; color:var(--muted); margin:8px 0}
+    .grid{display:grid; gap:12px}
+    @media (min-width: 720px){ .grid{grid-template-columns: 1fr 1fr} }
+    .badge{display:inline-block; padding:6px 10px; border:1px solid rgba(255,255,255,0.12); border-radius:999px; margin:4px 6px 0 0; color:#cbd5e1; font-size:13px}
+    a{color:#93c5fd; text-decoration:none}
+    a:hover{text-decoration:underline}
+    .btn{display:inline-block; padding:10px 14px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Vengadesan</h1>
+      <p>Final-year B.E. CSE student at TIET College (2021–2025) · Chidambaram, Tamil Nadu</p>
+      <p><strong>Email:</strong> your.email@example.com · <strong>Phone:</strong> +91-XXXXXXXXXX</p>
+      <p><strong>Links:</strong> <a href="https://github.com/<your-username>">GitHub</a> · <a href="https://www.linkedin.com/in/<your-handle>">LinkedIn</a></p>
+      <p><a class="btn" href="./Vengadesan_Resume.docx" download>⬇️ Download Resume (.docx)</a></p>
+    </div>
+
+    <div class="card">
+      <h2>Skills</h2>
+      <div>
+        <span class="badge">Python</span>
+        <span class="badge">C</span>
+        <span class="badge">Java</span>
+        <span class="badge">HTML</span>
+        <span class="badge">CSS</span>
+        <span class="badge">JavaScript</span>
+        <span class="badge">SQL</span>
+        <span class="badge">Git & GitHub</span>
+        <span class="badge">Linux</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Project One – Title</h3>
+          <p>Short 1–2 line description of what it does, your role, and the tech you used.</p>
+          <p><a href="https://github.com/<your-username>/<repo-name>">GitHub Repo</a></p>
+        </div>
+        <div class="card">
+          <h3>Project Two – Title</h3>
+          <p>Short 1–2 line description…</p>
+          <p><a href="https://github.com/<your-username>/<repo-name>">GitHub Repo</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Achievements & Certifications</h2>
+      <ul>
+        <li>Zonal-level Chess — <strong>1st Place</strong></li>
+        <li>Python Programming — <strong>YBT</strong></li>
+        <li>Google Analytics / Google Digital Garage / HubSpot (optional)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Contact</h2>
+      <p>Open to internships and entry-level IT/software roles. Email me at <a href="mailto:your.email@example.com">your.email@example.com</a>.</p>
+    </div>
+  </div>
+</body>
+</html>
