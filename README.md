@@ -15,7 +15,7 @@
 **Download:** [Vengadesan_Resume.docx](./Vengadesan_Resume.docx)
 
 ## 💻 Skills
-- Programming: Python, C, Java, HTML, CSS, JavaScript
+- Programming: Python,  HTML, CSS
 - Databases: MySQL / SQL
 - Tools: Git & GitHub, VS Code, Linux
 - Strengths: Problem solving, teamwork, adaptability
