@@ -27,7 +27,7 @@
 - ### 1️⃣ CS Dashboard
 **Interactive Data Visualization Dashboard** – Explore student performance, attendance, and trends.  
 **Stack:** Python, Flask, Pandas, HTML/CSS  
-[🔗 View Repository]()
+[🔗 View Repository](https://github.com/Vengadesanelangovan/Data-Visualization-Dashboard)
 
 - **Project Two – Title**  
   Short description…  
