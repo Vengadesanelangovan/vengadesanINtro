@@ -8,8 +8,6 @@
 
 📱 +91-6385229046 
 
-🔗 GitHub: https://github.com/<your-username>  
-
 🔗 LinkedIn: www.linkedin.com/in/vengadesan-elangovan<your-handle>
 
 
