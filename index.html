@@ -1,67 +1,126 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f9f9f9;
-  color: #333;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vengadesan Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
 
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-}
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
 
-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-.profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 4px solid #444;
-}
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #444;
+    }
 
-h1 {
-  margin: 10px 0;
-  font-size: 2em;
-}
+    h1 {
+      margin: 10px 0;
+      font-size: 2em;
+    }
 
-h2 {
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 5px;
-  margin-top: 30px;
-}
+    h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+      margin-top: 30px;
+    }
 
-.skills {
-  list-style: none;
-  padding: 0;
-}
+    .skills {
+      list-style: none;
+      padding: 0;
+    }
 
-.skills li {
-  display: inline-block;
-  margin: 5px 10px;
-  padding: 5px 10px;
-  background: #eee;
-  border-radius: 6px;
-}
+    .skills li {
+      display: inline-block;
+      margin: 5px 10px;
+      padding: 5px 10px;
+      background: #eee;
+      border-radius: 6px;
+    }
 
-.contact {
-  list-style: none;
-  padding: 0;
-}
+    .contact {
+      list-style: none;
+      padding: 0;
+    }
 
-.contact li {
-  margin: 8px 0;
-}
+    .contact li {
+      margin: 8px 0;
+    }
 
-a {
-  color: #007acc;
-  text-decoration: none;
-}
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
 
-a:hover {
-  text-decoration: underline;
-}
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="assets/vengadesan.jpg" alt="Profile" class="profile-img">
+      <h1>Vengadesan</h1>
+      <p>CSE Student • Aspiring Frontend/BI Engineer</p>
+    </header>
+
+    <section>
+      <h2>About Me</h2>
+      <p>
+        Enthusiastic developer passionate about <strong>Python</strong>, <strong>Web Development</strong>,
+        and <strong>Business Intelligence</strong>. Proven experience in project building and problem-solving.
+      </p>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li>Python</li>
+        <li>HTML / CSS / JavaScript</li>
+        <li>React</li>
+        <li>Power BI</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Achievements</h2>
+      <p>Zonal Level Chess – 1st Place 🏆</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <ul class="contact">
+        <li>Email: vengadesan@example.com</li>
+        <li>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
+        <li>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <script>
+    // Simple greeting on load
+    window.onload = function () {
+      console.log("Portfolio Loaded Successfully!");
+      alert("Welcome to Vengadesan's Portfolio 🚀");
+    };
+  </script>
+</body>
+</html>
