@@ -1,25 +1,3 @@
-/*
-Fixed single-file React portfolio component.
-
-Why this change?
-- Previous versions used a static `import` for the image (e.g. `import profilePic from "./assets/vengadesan.jpg"`).
-  That causes a build-time module resolution error if the file does not exist at that exact path in the `src` tree.
-
-How this fix works:
-- We no longer statically import the image. Instead we use a *public* URL path for the image (served from the `public/` folder), which avoids bundler "module not found" errors when the image is absent.
-- The component tries to load the image from a configurable public path and falls back to a generated avatar (initials) when the image fails to load.
-
-What you should do:
-1. Put your image file in your project's public folder at: `public/assets/vengadesan.jpg`
-   - If you prefer a different name or folder, update the `PROFILE_IMAGE_PUBLIC_PATH` constant below.
-   - Watch for filename case sensitivity (e.g. `Vengadesan.jpg` != `vengadesan.jpg` on Linux/macOS servers).
-2. Restart your dev server after adding the file (Vite: `npm run dev`, CRA: `npm start`).
-
-Save this file as: src/Portfolio.jsx and import it in your app (e.g. App.jsx or main.jsx):
-  import Portfolio from "./Portfolio";
-  ... <Portfolio />
-*/
-
 import React, { useMemo, useState } from "react";
 
 // ====== CONFIG ======
