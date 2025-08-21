@@ -2,8 +2,10 @@
 
 🎓 Final-year B.E. Computer Science Engineering (TIET College, 2021–2025)  
 📍 Chidambaram, Tamil Nadu  
-📧 VengadesanElango@gmail.com · 📱 +91-6385229046 
-🔗 GitHub: https://github.com/<your-username> · LinkedIn: www.linkedin.com/in/vengadesan-elangovan<your-handle>
+📧 VengadesanElango@gmail.com 
+📱 +91-6385229046 
+🔗 GitHub: https://github.com/<your-username>  
+🔗 LinkedIn: www.linkedin.com/in/vengadesan-elangovan<your-handle>
 
 ## 📂 Resume
 **Download:** [Vengadesan_Resume.docx](./Vengadesan_Resume.docx)
