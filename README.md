@@ -23,9 +23,11 @@
 ## 🚀 Projects
 > Replace the placeholders below with your real projects (repo links / demo links)
 
-- **Project One – Title**  
-  Short 1–2 line description of what it does, your role, and the tech you used.  
-  Repo: https://github.com/<your-username>/<repo-name>
+- **Project One – Title**
+- ### 1️⃣ CS Dashboard
+**Interactive Data Visualization Dashboard** – Explore student performance, attendance, and trends.  
+**Stack:** Python, Flask, Pandas, HTML/CSS  
+[🔗 View Repository]()
 
 - **Project Two – Title**  
   Short description…  
