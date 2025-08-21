@@ -1,80 +1,248 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vengadesan · Portfolio</title>
-  <style>
-    :root { --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; }
-    *{box-sizing:border-box}
-    body{margin:0; font-family:system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji","Segoe UI Emoji"; background:linear-gradient(180deg, #0b1220, #0f172a); color:var(--text)}
-    .wrap{max-width:980px; margin:0 auto; padding:32px 20px}
-    .card{background:rgba(17,24,39,0.6); border:1px solid rgba(255,255,255,0.06); border-radius:18px; padding:24px; box-shadow:0 10px 30px rgba(0,0,0,0.25); backdrop-filter: blur(8px); margin-bottom:18px}
-    h1{font-size:36px; margin:0 0 8px 0}
-    h2{font-size:22px; margin:14px 0}
-    p{line-height:1.6; color:var(--muted); margin:8px 0}
-    .grid{display:grid; gap:12px}
-    @media (min-width: 720px){ .grid{grid-template-columns: 1fr 1fr} }
-    .badge{display:inline-block; padding:6px 10px; border:1px solid rgba(255,255,255,0.12); border-radius:999px; margin:4px 6px 0 0; color:#cbd5e1; font-size:13px}
-    a{color:#93c5fd; text-decoration:none}
-    a:hover{text-decoration:underline}
-    .btn{display:inline-block; padding:10px 14px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); text-decoration:none}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <div class="card">
-      <h1>Vengadesan</h1>
-      <p>Final-year B.E. CSE student at TIET College (2021–2025) · Chidambaram, Tamil Nadu</p>
-      <p><strong>Email:</strong> your.email@example.com · <strong>Phone:</strong> +91-XXXXXXXXXX</p>
-      <p><strong>Links:</strong> <a href="https://github.com/<your-username>">GitHub</a> · <a href="https://www.linkedin.com/in/<your-handle>">LinkedIn</a></p>
-      <p><a class="btn" href="./Vengadesan_Resume.docx" download>⬇️ Download Resume (.docx)</a></p>
-    </div>
+/*
+Fixed single-file React portfolio component.
 
-    <div class="card">
-      <h2>Skills</h2>
-      <div>
-        <span class="badge">Python</span>
-        <span class="badge">C</span>
-        <span class="badge">Java</span>
-        <span class="badge">HTML</span>
-        <span class="badge">CSS</span>
-        <span class="badge">JavaScript</span>
-        <span class="badge">SQL</span>
-        <span class="badge">Git & GitHub</span>
-        <span class="badge">Linux</span>
-      </div>
-    </div>
+Why this change?
+- Previous versions used a static `import` for the image (e.g. `import profilePic from "./assets/vengadesan.jpg"`).
+  That causes a build-time module resolution error if the file does not exist at that exact path in the `src` tree.
 
-    <div class="card">
-      <h2>Projects</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Project One – Title</h3>
-          <p>Short 1–2 line description of what it does, your role, and the tech you used.</p>
-          <p><a href="https://github.com/<your-username>/<repo-name>">GitHub Repo</a></p>
+How this fix works:
+- We no longer statically import the image. Instead we use a *public* URL path for the image (served from the `public/` folder), which avoids bundler "module not found" errors when the image is absent.
+- The component tries to load the image from a configurable public path and falls back to a generated avatar (initials) when the image fails to load.
+
+What you should do:
+1. Put your image file in your project's public folder at: `public/assets/vengadesan.jpg`
+   - If you prefer a different name or folder, update the `PROFILE_IMAGE_PUBLIC_PATH` constant below.
+   - Watch for filename case sensitivity (e.g. `Vengadesan.jpg` != `vengadesan.jpg` on Linux/macOS servers).
+2. Restart your dev server after adding the file (Vite: `npm run dev`, CRA: `npm start`).
+
+Save this file as: src/Portfolio.jsx and import it in your app (e.g. App.jsx or main.jsx):
+  import Portfolio from "./Portfolio";
+  ... <Portfolio />
+*/
+
+import React, { useMemo, useState } from "react";
+
+// ====== CONFIG ======
+// Update this public path if you store the image elsewhere (public folder).
+// For Vite or CRA: placing the image in `public/assets/vengadesan.jpg` will make it available at '/assets/vengadesan.jpg'.
+const PROFILE_IMAGE_PUBLIC_PATH = "/assets/vengadesan.jpg";
+// ====================
+
+const profile = {
+  name: "Vengadesan",
+  role: "CSE Student • Aspiring Frontend/BI Engineer",
+  location: "Chidambaram, India",
+  tagline:
+    "I turn data and ideas into clean, usable interfaces. Learning React and Power BI while building real projects.",
+  about:
+    "I'm pursuing Computer Science and Engineering at TIET College. I enjoy solving problems, visualizing data, and crafting smooth UI/UX. I’ve won Zonal Level (1st place) in Chess, completed a Python course from YBT, and I’m currently exploring React, Power BI, and modern web tooling.",
+  education: [
+    { school: "TIET College", degree: "B.E. in Computer Science & Engineering", period: "Present" },
+    { school: "Higher Secondary – Vadakrishnapuram School", degree: "HSE", period: "Completed" },
+    { school: "Secondary – Vadakrishnapuram School", degree: "SSLC", period: "Completed" },
+  ],
+  achievements: [
+    { title: "Zonal Level Chess – 1st Place", note: "Competitive Chess Winner" },
+    { title: "Python Course (YBT)", note: "Certification Completed" },
+  ],
+  skills: ["Python", "HTML", "CSS", "JavaScript", "React (learning)", "Power BI (learning)", "Git & GitHub", "Linux / Kali basics"],
+  projects: [
+    { name: "Student Performance Dashboard", summary: "Interactive Power BI prototype exploring marks, attendance, and trends with drill-through.", stack: ["Power BI", "DAX", "Data Modeling"], href: "#" },
+    { name: "Responsive Portfolio (this site)", summary: "One-page React + Tailwind portfolio with clean components and smooth animations.", stack: ["React", "Tailwind", "Vite"], href: "#" },
+    { name: "Python Utility Pack", summary: "CLI tools for text parsing, CSV cleanup, and quick automation.", stack: ["Python", "CLI"], href: "#" },
+  ],
+  socials: {
+    email: "",
+    github: "",
+    linkedin: "",
+    resume: "#",
+  },
+};
+
+const Badge = ({ children }) => (
+  <span className="inline-flex items-center rounded-full border px-3 py-1 text-sm">{children}</span>
+);
+
+const Card = ({ children, className = "" }) => (
+  <div className={`rounded-2xl border shadow-sm bg-white/70 backdrop-blur p-6 ${className}`}>{children}</div>
+);
+
+function initialsFromName(name) {
+  if (!name) return "";
+  const parts = name.trim().split(/\s+/);
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
+export default function Portfolio() {
+  const [imgError, setImgError] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
+
+  // Compute public image URL — safe for Vite/CRA (public folder)
+  const publicImageUrl = useMemo(() => PROFILE_IMAGE_PUBLIC_PATH, []);
+
+  const initials = useMemo(() => initialsFromName(profile.name), []);
+
+  return (
+    <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 via-white to-slate-100 text-slate-800">
+      {/* HERO */}
+      <header className="mx-auto max-w-6xl px-6 pt-16 pb-8">
+        <div className="flex flex-col items-center text-center gap-6">
+          <div className="relative">
+            {/*
+              We intentionally DO NOT static-import the image from src/ to avoid the build-time
+              "module not found" error when the file isn't present. Instead, the component loads
+              the image from the public folder (or any URL you set in PROFILE_IMAGE_PUBLIC_PATH).
+
+              If the image cannot be loaded, we show a fallback avatar (initials).
+            */}
+
+            {!imgError ? (
+              <img
+                src={publicImageUrl}
+                alt={profile.name}
+                className={`h-28 w-28 object-cover rounded-3xl shadow-lg border ${imgLoaded ? "opacity-100" : "opacity-0"} transition-opacity duration-300`}
+                onLoad={() => setImgLoaded(true)}
+                onError={() => setImgError(true)}
+              />
+            ) : (
+              <div className="h-28 w-28 rounded-3xl bg-gradient-to-br from-indigo-500 to-blue-500 flex items-center justify-center text-white font-bold text-xl shadow-lg border">
+                {initials}
+              </div>
+            )}
+
+            <div className="absolute -right-3 -bottom-3 rounded-xl bg-white border px-3 py-1 text-xs flex items-center gap-1 shadow">
+              <span style={{ fontSize: 12 }}>📍</span>
+              <span>{profile.location}</span>
+            </div>
+          </div>
+
+          <div>
+            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">{profile.name}</h1>
+            <p className="mt-2 text-lg sm:text-xl text-slate-600">{profile.role}</p>
+          </div>
+
+          <p className="max-w-3xl text-slate-700 leading-relaxed">{profile.tagline}</p>
+
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {profile.socials.email && (
+              <a href={`mailto:${profile.socials.email}`} className="inline-flex items-center gap-2 rounded-2xl border px-4 py-2 hover:shadow">
+                <span style={{ fontSize: 14 }}>📧</span> Email
+              </a>
+            )}
+            {profile.socials.github && (
+              <a href={profile.socials.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl border px-4 py-2 hover:shadow">
+                <span style={{ fontSize: 14 }}>💻</span> GitHub
+              </a>
+            )}
+            {profile.socials.linkedin && (
+              <a href={profile.socials.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl border px-4 py-2 hover:shadow">
+                <span style={{ fontSize: 14 }}>🔗</span> LinkedIn
+              </a>
+            )}
+            {profile.socials.resume && profile.socials.resume !== "#" && (
+              <a href={profile.socials.resume} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl border px-4 py-2 hover:shadow">
+                <span style={{ fontSize: 14 }}>🧾</span> Resume
+              </a>
+            )}
+          </div>
         </div>
-        <div class="card">
-          <h3>Project Two – Title</h3>
-          <p>Short 1–2 line description…</p>
-          <p><a href="https://github.com/<your-username>/<repo-name>">GitHub Repo</a></p>
-        </div>
-      </div>
-    </div>
+      </header>
 
-    <div class="card">
-      <h2>Achievements & Certifications</h2>
-      <ul>
-        <li>Zonal-level Chess — <strong>1st Place</strong></li>
-        <li>Python Programming — <strong>YBT</strong></li>
-        <li>Google Analytics / Google Digital Garage / HubSpot (optional)</li>
-      </ul>
-    </div>
+      <main className="mx-auto max-w-6xl px-6 pb-24 space-y-10">
+        {/* ABOUT + HIGHLIGHTS */}
+        <section className="grid md:grid-cols-3 gap-6">
+          <Card className="md:col-span-2">
+            <h2 className="text-2xl font-bold flex items-center gap-2">💡 About</h2>
+            <p className="mt-3 text-slate-700 leading-relaxed">{profile.about}</p>
 
-    <div class="card">
-      <h2>Contact</h2>
-      <p>Open to internships and entry-level IT/software roles. Email me at <a href="mailto:your.email@example.com">your.email@example.com</a>.</p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {profile.skills.map((s) => (<Badge key={s}>{s}</Badge>))}
+            </div>
+          </Card>
+
+          <Card>
+            <h3 className="text-xl font-semibold mb-3">🏆 Highlights</h3>
+            <ul className="space-y-3">
+              {profile.achievements.map((a, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <div style={{ fontSize: 18 }}>🎖️</div>
+                  <div>
+                    <p className="font-medium">{a.title}</p>
+                    {a.note && <p className="text-sm text-slate-600">{a.note}</p>}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </Card>
+        </section>
+
+        {/* PROJECTS */}
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Projects</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {profile.projects.map((p, i) => (
+              <Card key={i}>
+                <div className="flex items-center justify-between gap-4">
+                  <h3 className="text-lg font-semibold">{p.name}</h3>
+                  {p.href && p.href !== "#" && (
+                    <a href={p.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-sm">View</a>
+                  )}
+                </div>
+                <p className="mt-2 text-slate-700 min-h-[60px]">{p.summary}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {p.stack.map((tag) => (<Badge key={tag}>{tag}</Badge>))}
+                </div>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* EDUCATION */}
+        <section>
+          <h2 className="text-2xl font-bold mb-4">🎓 Education</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {profile.education.map((e, i) => (
+              <Card key={i}>
+                <p className="text-sm text-slate-500">{e.period}</p>
+                <p className="mt-1 font-semibold">{e.school}</p>
+                <p className="text-slate-700">{e.degree}</p>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* CONTACT */}
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Contact</h2>
+          <Card>
+            <p className="text-slate-700">Want to collaborate or have an opportunity? Reach out!</p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              {profile.socials.email ? (
+                <a href={`mailto:${profile.socials.email}`} className="inline-flex items-center gap-2 rounded-2xl border px-4 py-2 hover:shadow">
+                  <span style={{ fontSize: 14 }}>📧</span> {profile.socials.email}
+                </a>
+              ) : (
+                <span className="text-sm text-slate-500">Add your email in <code>profile.socials.email</code> to show a button.</span>
+              )}
+
+              {profile.socials.github ? (
+                <a href={profile.socials.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl border px-4 py-2 hover:shadow">
+                  <span style={{ fontSize: 14 }}>💻</span> GitHub
+                </a>
+              ) : null}
+
+              {profile.socials.linkedin ? (
+                <a href={profile.socials.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl border px-4 py-2 hover:shadow">
+                  <span style={{ fontSize: 14 }}>🔗</span> LinkedIn
+                </a>
+              ) : null}
+            </div>
+          </Card>
+        </section>
+      </main>
+
+      <footer className="py-10 text-center text-sm text-slate-500">© {new Date().getFullYear()} {profile.name}. Built with React & Tailwind.</footer>
     </div>
-  </div>
-</body>
-</html>
+  );
+}
