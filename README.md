@@ -4,11 +4,11 @@
 
 📍 Chidambaram, Tamil Nadu  
 
-📧 VengadesanElango@gmail.com 
+📧 Vengadesanelango@gmail.com 
 
-📱 +91-6380958018
+📱 +91-6385229046
 a
-🔗 LinkedIn: www.linkedin.com/in/gokul-kuppan
+🔗 LinkedIn: www.linkedin.com/in/vengadesan-elangovan
 
 
 ## 📂 Resume
@@ -16,9 +16,9 @@ a
 
 ## 💻 Skills
 - Programming: Python,  HTML, CSS
-- Databases: MySQL / SQL
-- Tools: Git & GitHub, VS Code
-- Strengths: 
+- Databases: MySQL / SQL / 
+- Tools: Git & GitHub, VS Code , linux
+- Strengths: Problem solving, teamwork, adaptability
 
 ## 🚀 Projects
 - **Project One – CS Advanced Dashboard** - ### 1️⃣ CS Dashboard **Interactive Data Visualization 
