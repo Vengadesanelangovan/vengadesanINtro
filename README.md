@@ -6,9 +6,9 @@
 
 📧 VengadesanElango@gmail.com 
 
-📱 +91-6385229046 
+📱 +91-6380958018
 
-🔗 LinkedIn: www.linkedin.com/in/vengadesan-elangovan<your-handle>
+🔗 LinkedIn: www.linkedin.com/in/gokul-kuppan
 
 
 ## 📂 Resume
@@ -17,25 +17,23 @@
 ## 💻 Skills
 - Programming: Python,  HTML, CSS
 - Databases: MySQL / SQL
-- Tools: Git & GitHub, VS Code, Linux
-- Strengths: Problem solving, teamwork, adaptability
+- Tools: Git & GitHub, VS Code
+- Strengths: 
 
 ## 🚀 Projects
-- **Project One – CS Advanced Dashboard**
-  - ### 1️⃣ CS Dashboard
-  **Interactive Data Visualization Dashboard** – Explore student performance, attendance, and trends.  
-  **Stack:** Python, Flask, Pandas, HTML/CSS  
-  [🔗 View Repository](https://github.com/Vengadesanelangovan/Data-Visualization-Dashboard)
+- **Project One **
+   
+  [🔗 View Repository]()
 
 - **Project Two – Title**  
   Short description…  
   Repo: https://github.com/<your-username>/<repo-name>
 
 ## 🏆 Achievements & Certifications
-- Zonal-level Chess — **1st Place**
-- Python Programming — **YBT**
-- (Optional) Google Analytics / Google Digital Garage / HubSpot
+- Tennis - ** Runner **
+- Python Programming — **YBI**
+- Google Analytics 
 
 ## 📫 Contact
 Open to internships and entry-level IT/software roles.  
-Email me at **Vengadesanelango.com**.
+Email me at **Gokulkuppan2005.com**.
