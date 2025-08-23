@@ -7,7 +7,7 @@
 📧 VengadesanElango@gmail.com 
 
 📱 +91-6380958018
-
+a
 🔗 LinkedIn: www.linkedin.com/in/gokul-kuppan
 
 
@@ -21,19 +21,23 @@
 - Strengths: 
 
 ## 🚀 Projects
-- **Project One **
+- **Project One – CS Advanced Dashboard** - ### 1️⃣ CS Dashboard **Interactive Data Visualization 
+    Dashboard** – Explore student performance, attendance, and trends. **Stack:** Python, Flask,       Pandas, HTML/CSS
+- [🔗 View Repository](https://github.com/Vengadesanelangovan/Data-Visualization-Dashboard)
    
-  [🔗 View Repository]()
-
 - **Project Two – Title**  
   Short description…  
   Repo: https://github.com/<your-username>/<repo-name>
 
 ## 🏆 Achievements & Certifications
-- Tennis - ** Runner **
-- Python Programming — **YBI**
-- Google Analytics 
+ - Zonal-level Chess — **1st Place**
+ - Python Programming — **YBT**
+ - (Optional) Google Analytics / Google Digital Garage
+ - infogro technology python programming with web designing 
 
 ## 📫 Contact
+   / HubSpot ## 📫 Contact Open to internships and entry-level IT/software roles.
+
+📧 Email me at **Vengadesanelango.com**.
 Open to internships and entry-level IT/software roles.  
 Email me at **Gokulkuppan2005.com**.
