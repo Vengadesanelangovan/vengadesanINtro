@@ -40,4 +40,4 @@
 
 📧 Email me at **Vengadesanelango.com**.
 Open to internships and entry-level IT/software roles.  
-Email me at **Gokulkuppan2005.com**.
+Email me at **Vengadesanelango.com**.
