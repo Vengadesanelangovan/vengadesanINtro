@@ -25,13 +25,13 @@
     Dashboard** – Explore student performance, attendance, and trends. **Stack:** Python, Flask,       Pandas, HTML/CSS
 - [🔗 View Repository](https://github.com/Vengadesanelangovan/Data-Visualization-Dashboard)
    
-- **Project Two – Title**  
-  Short description…  
-  Repo: https://github.com/<your-username>/<repo-name>
+- Fraud Detection | GitHub: Vengadesanelangovan/ Farud Detection 
+
+Developed a Python-based fraud detection system using machine learning to identify suspicious transactions in real-time. 
 
 ## 🏆 Achievements & Certifications
  - Zonal-level Chess — **1st Place**
- - Python Programming — **YBT**
+ - Python Programming — **YBI**
  - (Optional) Google Analytics / Google Digital Garage
  - infogro technology python programming with web designing 
 
