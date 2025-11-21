@@ -1,6 +1,6 @@
 # Hi, I'm Vengadesan 👋
 
-🎓 Final-year B.E. Computer Science Engineering (TIET College, 2022–2026)
+🎓 B.E. Computer Science Engineering (TIET College, 2022–2026)
 
 📍 Chidambaram, Tamil Nadu  
 
